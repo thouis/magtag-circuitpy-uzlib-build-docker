@@ -1,0 +1,12 @@
+name: 'Build'
+description: 'Build in dockerized debian'
+inputs:
+  run:
+    description: 'Build command'
+    required: true
+    default: 'uname -a'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.run }}
